@@ -27,7 +27,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func loadSongs() {
-        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "smaple"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
+        songs.append(Song(name: "Clean Bandit - Rockabye ft. Sean Paul & Anne-Marie (Wysh Reggae Remix)__", album: "Aloke 2", artistName: "Sean Paul & Anne-Marie", imageName: "smaple", trackName: "song2"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
     }
     
     
@@ -55,11 +59,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postion = indexPath.row
         
-        guard let vc = storyboard?.instantiateViewController(identifier: "musicPlayer") else {
+        guard let vc = storyboard?.instantiateViewController(identifier: "musicPlayer") as? MusicPlayerViewController else {
             return
         }
         
-        let curentSong:Song = songs[postion]
+        vc.songs=songs
+        vc.postion=postion
         
         present(vc, animated: true)
         // navigationController?.pushViewController(vc, animated: true)  // mehema damma ama todo eke wage swipe wenwa
