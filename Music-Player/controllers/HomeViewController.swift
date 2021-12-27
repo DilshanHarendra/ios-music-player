@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = song.name
         cell.detailTextLabel?.text = song.artistName
-        cell.imageView?.image=UIImage(named: song.)
+        cell.imageView?.image=UIImage(named: song.imageName)
         cell.accessoryType = .disclosureIndicator
         
         cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 20)
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let curentSong:Song = songs[postion]
         
-        present(vc, animated: true) // meke wenama view ekek open wenwa
+        present(vc, animated: true)
         // navigationController?.pushViewController(vc, animated: true)  // mehema damma ama todo eke wage swipe wenwa
         
         

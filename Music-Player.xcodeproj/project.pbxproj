@@ -101,10 +101,10 @@
 		4C88E74B277991C9000E8F91 /* Music-Player */ = {
 			isa = PBXGroup;
 			children = (
+				4C88E7882779B30A000E8F91 /* controllers */,
 				4C88E78227799761000E8F91 /* models */,
 				4C88E74C277991C9000E8F91 /* AppDelegate.swift */,
 				4C88E74E277991C9000E8F91 /* SceneDelegate.swift */,
-				4C88E750277991C9000E8F91 /* HomeViewController.swift */,
 				4C88E752277991C9000E8F91 /* Main.storyboard */,
 				4C88E755277991D2000E8F91 /* Assets.xcassets */,
 				4C88E757277991D2000E8F91 /* LaunchScreen.storyboard */,
@@ -137,6 +137,14 @@
 				4C88E78327799776000E8F91 /* Songs.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		4C88E7882779B30A000E8F91 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C88E750277991C9000E8F91 /* HomeViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
