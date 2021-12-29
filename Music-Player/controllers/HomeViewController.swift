@@ -29,9 +29,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadSongs() {
         songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
         songs.append(Song(name: "Clean Bandit - Rockabye ft. Sean Paul & Anne-Marie (Wysh Reggae Remix)__", album: "Aloke 2", artistName: "Sean Paul & Anne-Marie", imageName: "smaple", trackName: "song2"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple2", trackName: "song1"))
         songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
-        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
-        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple", trackName: "song1"))
+        songs.append(Song(name: "Ahankara Nagare", album: "Aloke 2", artistName: "Ranidu Iraj", imageName: "smaple2", trackName: "song1"))
     }
     
     
@@ -41,17 +41,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "songCell",for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "songCell",for: indexPath) as! SongTableViewCell
         let song = songs[indexPath.row]
         
-        cell.textLabel?.text = song.name
-        cell.detailTextLabel?.text = song.artistName
-        cell.imageView?.image=UIImage(named: song.imageName)
-        cell.accessoryType = .disclosureIndicator
+        cell.songNameLabel?.text = song.name
+        cell.artisNameLabel?.text = song.artistName
+        cell.coverImage?.image=UIImage(named: song.imageName)
         
-        cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 20)
-        
-        cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 18)
         
         return cell
     }
